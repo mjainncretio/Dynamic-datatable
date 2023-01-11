@@ -14,17 +14,12 @@
         INSERT bookOrder;
 
         Test.startTest();
-        String accountobjectLabel = RelatedObjectController.getObjectName(account.Id).label;
-        String accountobjectAPIName = RelatedObjectController.getObjectName(account.Id).objectApiName;
-        String bookOrderobjectLabel = RelatedObjectController.getObjectName(bookOrder.Id).label;
-        String bookOrderobjectAPIName = RelatedObjectController.getObjectName(bookOrder.Id).objectApiName;
-        Test.stopTest();
-
         //object label and object API Name of the standard and custom object
-        System.assertEquals('Account', accountobjectLabel);
-        System.assertEquals('Account', accountobjectAPIName);
-        System.assertEquals('Book Order', bookOrderobjectLabel);
-        System.assertEquals('Book_Order__c', bookOrderobjectAPIName);
+        System.assertEquals('Account', RelatedObjectController.getObjectName(account.Id).label);
+        System.assertEquals('Account', RelatedObjectController.getObjectName(account.Id).objectApiName);
+        System.assertEquals('Book Order', RelatedObjectController.getObjectName(bookOrder.Id).label);
+        System.assertEquals('Book_Order__c', RelatedObjectController.getObjectName(bookOrder.Id).objectApiName);
+        Test.stopTest(); 
    }
 
    //To get related object list
