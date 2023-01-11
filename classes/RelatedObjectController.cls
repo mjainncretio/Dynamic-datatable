@@ -17,7 +17,6 @@ public with sharing class RelatedObjectController
         {
             option.add(new showObjects(childRelationship.getChildSObject().getDescribe()));
         }
-        System.debug(option);
         return option;
     }
 
@@ -94,7 +93,7 @@ public with sharing class RelatedObjectController
         }
         String query = 'SELECT ';
         Map<String,Schema.SObjectField> fields = Schema.getGlobalDescribe().get(childObjectName)
-                                                    .getDescribe().fields.getMap();
+                                                 .getDescribe().fields.getMap();
         for(String field : fields.keyset()) 
         {
             Schema.DescribeFieldResult describeResult = fields.get(field).getDescribe();
