@@ -65,14 +65,10 @@
         INSERT account;
         
         List<Contact> contactList = new List<Contact>();
-        Contact contactFirst = new Contact(FirstName = 'Navya', LastName = 'Jain', AccountId = account.Id);
-        Contact contactSecond = new Contact(FirstName = 'Harshita', LastName = 'Jain', AccountId = account.Id);
-        Contact contactThird = new Contact(FirstName = 'Karishma', LastName = 'Saini', AccountId = account.Id);
-        Contact contactFour = new Contact(FirstName = 'Mukund', LastName = 'Sharma', AccountId = account.Id);
-        contactList.add(contactFirst);
-        contactList.add(contactSecond);
-        contactList.add(contactThird);
-        contactList.add(contactFour);
+        contactList.add(new Contact(FirstName = 'Navya', LastName = 'Jain', AccountId = account.Id));
+        contactList.add(new Contact(FirstName = 'Harshita', LastName = 'Jain', AccountId = account.Id));
+        contactList.add(new Contact(FirstName = 'Karishma', LastName = 'Saini', AccountId = account.Id));
+        contactList.add(new Contact(FirstName = 'Mukund', LastName = 'Sharma', AccountId = account.Id));
         INSERT contactList;
 
         contactList = [SELECT Id, LastName, OwnerId FROM Contact WHERE AccountId = :account.Id];
